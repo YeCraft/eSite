@@ -1,0 +1,250 @@
+:root {
+    --color-primary: #060606;
+    --color-primary-darker: #06993d;
+    --color-accent: #FF7939;
+    --color-accent-darker: #f07136;
+    --color-white: #ffffff;
+    --header-height: 5.5rem;
+    --sf-pro: 'SF Pro Display', sans-serif;
+}
+
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+}
+
+.header {
+    position: fixed;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header > h1 {
+    margin: -250px;
+}
+
+#form {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+}
+#input {
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-family: var(--sf-pro);
+}
+
+.submit {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0 2rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: 0;
+    font-family: var(--sf-pro);
+}
+
+ul {
+    list-style: none;
+    padding: calc(var(--header-height) + 0.5rem) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+li {
+    background-color: var(--color-primary-darker);
+    border-radius: 1rem;
+    color: var(--color-white);
+    padding: 1rem;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+    font-family: var(--sf-pro);
+}
+
+.register-form {
+    padding-top: 5rem;
+    /* Поясніть дітям функцію calc */
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    padding: 1.5rem;
+    gap: 0.5rem;
+    background-color: var(--color-primary);
+    border-radius: 1rem;
+}
+
+.register-form__title {
+    color: var(--color-white);
+}
+
+.register-form__input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    outline: none;
+    border-radius: 0.5rem;
+    border: 0;
+}
+
+.register-form__label {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding-top: 1rem;
+}
+
+.register-form__button {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border: 0;
+    padding: 0.5rem 2rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.register-form__button:hover {
+    box-shadow: 0 0 5px 0 grey;
+    background-color: var(--color-accent-darker);
+} 
+
+#logout {
+    margin-left: 30%;
+    padding: 6px;
+    font-family: var(--sf-pro);
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: var(--color-primary-darker);
+    font-size: 2rem;
+    cursor: pointer;
+}
+.product {
+  cursor:pointer;
+  position:relative;
+  top: 100px; left: 45px;
+  height:275px;
+  width: 30%;
+  z-index:1;
+}
+.product:before {
+  content: ' ';
+  display:block;
+  width:440px;
+  height:180px;
+  position:absolute;
+  left:-40px;
+  top:-20px;
+  background: linear-gradient(to right, #5f7ad5, #914fff);
+  z-index:-1;
+  transition: all 0.5s ease-in-out;
+}
+.mattress {
+    width: 200px;
+  height: 200px;
+  margin-top:0;
+  transition: all 0.5s ease-in-out;
+  position:relative;
+  top: 0%; left: 20%;
+  z-index:1;
+}
+.product:hover .mattress {
+  margin-top:-16px;
+}
+.product:after {
+  content:' ';
+  display:block;
+  height:271px;
+  width:383px;
+  position:absolute;
+  top: 3px;
+  left: 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index:0;
+  opacity:.8;
+  transition: all 0.5s ease-in-out;
+}
+.product:hover:after {
+  top:10px;
+  left:2%;
+  background-size: 97% 97%;
+  opacity:0.35;
+}
+.product:hover:before {
+  height:325px;
+}
+.copy {
+  position:absolute;
+  top:230px;
+  left:0;
+  font-family: "Nunito", sans-serif;
+  color:#1f56e1;
+  letter-spacing: 0.3px;
+  transition: all 0.5s ease-in-out;
+}
+.copy p, .copy h4 {
+  margin:0;
+}
+.product:hover .copy {
+  color:#fff;
+}
+.cta {
+  opacity:0;
+  position:absolute;
+  top:85%;
+  right:10%;
+  background-color: #fff;
+  color: #243F81;
+  border-radius: 50px;
+  padding: 12px 48px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  text-decoration: none;
+  box-shadow: 0 16px 32px 0 rgba(0, 40, 120, .35);
+  transition: all 0.7s ease;
+}
+.cta:hover {
+  box-shadow: 0 0px 0px 0 rgba(0, 40, 120, 0);
+  background-color: #243F81;
+  color: #fff;
+}
+.product:hover .cta {
+  opacity:1;
+}
